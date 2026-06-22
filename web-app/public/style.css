@@ -1,0 +1,195 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #0b0d12;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#renderCanvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  display: block;
+}
+
+#ui-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: #e0e0e0;
+  font-size: 12px;
+  user-select: none;
+  pointer-events: none;
+}
+
+#ui-overlay h1 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #7fbaff;
+}
+
+#panel {
+  pointer-events: auto;
+  background: rgba(10, 12, 18, 0.78);
+  border: 1px solid rgba(127, 186, 255, 0.25);
+  border-radius: 8px;
+  padding: 12px;
+  width: 280px;
+  backdrop-filter: blur(6px);
+}
+
+#panel .group { margin-bottom: 14px; }
+#panel .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #7fbaff;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+#variable-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+#variable-buttons button {
+  flex: 1 1 calc(50% - 4px);
+  padding: 6px 8px;
+  font-size: 10px;
+  background: rgba(127, 186, 255, 0.08);
+  color: #c5d4e8;
+  border: 1px solid rgba(127, 186, 255, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#variable-buttons button:hover {
+  background: rgba(127, 186, 255, 0.18);
+}
+#variable-buttons button.active {
+  background: rgba(127, 186, 255, 0.45);
+  color: #fff;
+  border-color: #7fbaff;
+}
+
+#q-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: rgba(127, 186, 255, 0.25);
+  border-radius: 2px;
+  outline: none;
+}
+#q-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #7fbaff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #6a7382;
+  margin-top: 4px;
+}
+
+#xr-buttons {
+  display: flex;
+  gap: 4px;
+}
+#xr-buttons button {
+  flex: 1 1 50%;
+  padding: 6px 8px;
+  font-size: 10px;
+  background: rgba(127, 186, 255, 0.08);
+  color: #c5d4e8;
+  border: 1px solid rgba(127, 186, 255, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#xr-buttons button:hover:not(:disabled) {
+  background: rgba(127, 186, 255, 0.18);
+}
+#xr-buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#vr-cheatsheet-toggle {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 10px;
+  text-align: left;
+  background: rgba(127, 186, 255, 0.08);
+  color: #c5d4e8;
+  border: 1px solid rgba(127, 186, 255, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+}
+#vr-cheatsheet-toggle:hover {
+  background: rgba(127, 186, 255, 0.18);
+}
+#vr-cheatsheet ul {
+  list-style: none;
+  padding: 6px 0 0 0;
+  margin: 0;
+  font-size: 10px;
+  color: #c5d4e8;
+  line-height: 1.5;
+}
+#vr-cheatsheet li b {
+  color: #7fbaff;
+  font-weight: 600;
+}
+
+#status {
+  font-size: 10px;
+  color: #6a7382;
+  font-style: italic;
+}
+
+/* Centered loading overlay shown while the flowfield GLBs load in parallel. */
+#loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: none; /* toggled to "flex" by app.ts during the flowfield load */
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 13, 18, 0.78);
+  z-index: 1000;
+  pointer-events: auto;
+}
+#loading-overlay .loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+#loading-overlay .spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(127, 186, 255, 0.18);
+  border-top-color: #7fbaff;
+  border-radius: 50%;
+  animation: tfg-spin 0.9s linear infinite;
+}
+@keyframes tfg-spin {
+  to { transform: rotate(360deg); }
+}
+#loading-progress {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #c5d4e8;
+}

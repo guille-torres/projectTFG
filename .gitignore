@@ -1,0 +1,30 @@
+# =====================================================================
+#   - web-app/
+#   - scripts/
+# =====================================================================
+
+/*
+!/.gitignore
+!/.github/
+!/web-app/
+!/scripts/
+!/README.md
+
+# --- web-app build / deps -------------------------------------------
+web-app/node_modules/
+web-app/dist/
+web-app/.vite/
+web-app/*.log
+
+# --- scripts cache --------------------------------------------------
+scripts/__pycache__/
+scripts/**/__pycache__/
+scripts/*.pyc
+
+# --- OS / editor ----------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

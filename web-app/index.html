@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualización de Simulaciones de Campo Fluido en VR</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <canvas id="renderCanvas" touch-action="none"></canvas>
+
+    <div id="loading-overlay">
+      <div class="loading-box">
+        <div class="spinner"></div>
+        <div id="loading-progress">Cargando mallas...</div>
+      </div>
+    </div>
+
+    <div id="ui-overlay">
+      <h1>Visualización de Simulaciones CFD</h1>
+      <div id="panel">
+        <div class="group">
+          <div class="label">Variable</div>
+          <!-- Botones generados desde src/client/constants.ts en bindUI(). -->
+          <div id="variable-buttons"></div>
+        </div>
+        <div class="group">
+          <div class="label">Q-criterion: <span id="q-value"></span></div>
+          <input id="q-slider" type="range" value="0" />
+          <!-- Ticks generados desde Q_VALUES en bindUI(). -->
+          <div class="ticks"></div>
+        </div>
+        <div class="group">
+          <div class="label">Inmersivo</div>
+          <div id="xr-buttons">
+            <button id="enter-vr" disabled>Entrar VR</button>
+            <button id="enter-ar" disabled>Entrar AR</button>
+          </div>
+        </div>
+        <div class="group" id="vr-cheatsheet">
+          <button id="vr-cheatsheet-toggle" type="button" aria-expanded="false">Mandos VR ▸</button>
+          <ul hidden>
+            <li><b>Stick derecho:</b> mover malla</li>
+            <li><b>Stick izquierdo (Y):</b> escalar</li>
+            <li><b>A / B:</b> variable siguiente / anterior</li>
+            <li><b>X / Y:</b> Q siguiente / anterior</li>
+          </ul>
+        </div>
+        <div id="status">Cargando…</div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/client/app.ts"></script>
+  </body>
+</html>

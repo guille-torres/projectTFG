@@ -13,7 +13,7 @@ fluido.
 
 ## Demo
 
-> `https://<usuario>.github.io/projectTFG/`
+> `https://guille-torres.github.io/projectTFG/`
 
 Compatible con cualquier navegador moderno. Para la sesión inmersiva se
 necesita un dispositivo con soporte WebXR (visor VR o móvil con cámara
@@ -36,8 +36,6 @@ perfil. Los GLBs ya están optimizados (decimados en Blender y comprimidos
 con Draco) y se sirven tal cual; no es necesario el dataset original de
 CFD para correr la app.
 
-## Uso
-
 ### Desarrollo local
 
 Requiere Node.js ≥ 20.
@@ -48,8 +46,7 @@ npm install
 npm run dev
 ```
 
-El servidor de Vite arranca en `https://localhost:5173/` con HTTPS
-auto-firmado (necesario para WebXR). La primera vez el navegador avisa
+HTTPS auto-firmado (necesario para WebXR). La primera vez el navegador avisa
 de certificado no fiable; acepta y continúa.
 
 Para probar desde un móvil en la misma red:
@@ -83,15 +80,12 @@ Ver `scripts/README.md` para los pasos detallados.
 
 ## Tecnologías
 
-- **[Babylon.js](https://www.babylonjs.com/)** — motor 3D para navegador
-  sobre WebGL/WebGPU.
-- **[Vite](https://vitejs.dev/)** — empaquetador de la aplicación.
-- **[glTF / Draco](https://www.khronos.org/gltf/)** — formato de
-  transporte y compresión geométrica.
-- **[WebXR Device API](https://www.w3.org/TR/webxr/)** — sesiones
-  inmersivas VR/AR.
+- **[Babylon.js](https://www.babylonjs.com/)**.
+- **[Vite](https://vitejs.dev/)**.
+- **[glTF / Draco](https://www.khronos.org/gltf/)**.
+- **[WebXR Device API](https://www.w3.org/TR/webxr/)**.
 - **[ParaView](https://www.paraview.org/)**,
-  **[Blender](https://www.blender.org/)** — preproceso (offline).
+  **[Blender](https://www.blender.org/)**
 
 ## Autoría
 

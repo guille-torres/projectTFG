@@ -4,7 +4,7 @@ Aplicación web interactiva para visualizar resultados de simulaciones de
 Mecánica de Fluidos Computacional (CFD) en un navegador, con soporte
 opcional de Realidad Virtual y Aumentada vía WebXR. Es el resultado del
 Trabajo de Fin de Grado *Procesamiento y Visualización de Datos de CFD
-para Realidad Virtual y Aumentada* (ETSIAE — UPM).
+para Realidad Virtual y Aumentada* (ETSIAE - UPM).
 
 El caso de estudio es el flujo en torno a un perfil a 90° de
 ángulo de ataque en régimen de *Vortex-Induced Vibrations* (VIV), con
@@ -88,6 +88,5 @@ Ver `scripts/README.md` para los pasos detallados.
   **[Blender](https://www.blender.org/)**
 
 ## Autoría
-
-Guillermo Torres Pedrares — ETSIAE, Universidad Politécnica de Madrid.
-Tutor: Sergio Ávila-Sánchez.
+Autor: Guillermo Torres Pedrares
+Tutor: Sergio Ávila Sánchez
